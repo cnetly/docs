@@ -1,1 +1,61 @@
-<mxfile host="app.diagrams.net" modified="2021-04-01T02:33:27.450Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36 Edg/89.0.774.63" version="14.2.9" etag="XrpDwZ8JnJhD1BB-vWPg" type="github"><diagram id="h4gHyp289pLxnWVvlPYA">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-04-01T02:57:22.212Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36 Edg/89.0.774.63" etag="qJ9F90sjKB34nmyZQDEH" version="14.2.9" type="github">
+  <diagram id="h4gHyp289pLxnWVvlPYA" name="第 1 页">
+    <mxGraphModel dx="1695" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="AUk9rHBCdp10U5CmNInO-1" value="发送短信验证码" style="swimlane;html=1;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=20;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="40" width="550" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="AUk9rHBCdp10U5CmNInO-2" value="用户" style="swimlane;html=1;startSize=20;" vertex="1" parent="AUk9rHBCdp10U5CmNInO-1">
+          <mxGeometry y="20" width="130" height="460" as="geometry">
+            <mxRectangle y="20" width="30" height="460" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUk9rHBCdp10U5CmNInO-18" value="发送验证码" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="AUk9rHBCdp10U5CmNInO-2">
+          <mxGeometry x="15" y="40" width="75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AUk9rHBCdp10U5CmNInO-7" value="smscontroller" style="swimlane;html=1;startSize=20;" vertex="1" parent="AUk9rHBCdp10U5CmNInO-1">
+          <mxGeometry x="130" y="20" width="180" height="460" as="geometry">
+            <mxRectangle x="540" y="60" width="70" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AUk9rHBCdp10U5CmNInO-20" value="取得IP" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="AUk9rHBCdp10U5CmNInO-7">
+          <mxGeometry x="50" y="40" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AUk9rHBCdp10U5CmNInO-23" value="根据用户IP进行限制&lt;br&gt;存入reids，60s&lt;br&gt;【mobile:smscode:$ip】=$ip" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="AUk9rHBCdp10U5CmNInO-7">
+          <mxGeometry x="10" y="90" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AUk9rHBCdp10U5CmNInO-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="AUk9rHBCdp10U5CmNInO-7" source="AUk9rHBCdp10U5CmNInO-20" target="AUk9rHBCdp10U5CmNInO-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AUk9rHBCdp10U5CmNInO-25" value="生成验证码，并发送短信" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="AUk9rHBCdp10U5CmNInO-7">
+          <mxGeometry x="10" y="180" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="AUk9rHBCdp10U5CmNInO-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="AUk9rHBCdp10U5CmNInO-7" source="AUk9rHBCdp10U5CmNInO-23" target="AUk9rHBCdp10U5CmNInO-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AUk9rHBCdp10U5CmNInO-27" value="生成验证码存入redis，30m&lt;br&gt;【mobile:smscode:$mobile】=$code" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="AUk9rHBCdp10U5CmNInO-7">
+          <mxGeometry x="10" y="260" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="AUk9rHBCdp10U5CmNInO-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="AUk9rHBCdp10U5CmNInO-7" source="AUk9rHBCdp10U5CmNInO-25" target="AUk9rHBCdp10U5CmNInO-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AUk9rHBCdp10U5CmNInO-3" value="Lane 2" style="swimlane;html=1;startSize=20;" vertex="1" parent="AUk9rHBCdp10U5CmNInO-1">
+          <mxGeometry x="310" y="20" width="120" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="AUk9rHBCdp10U5CmNInO-4" value="Lane 3" style="swimlane;html=1;startSize=20;" vertex="1" parent="AUk9rHBCdp10U5CmNInO-1">
+          <mxGeometry x="430" y="20" width="120" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="AUk9rHBCdp10U5CmNInO-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="AUk9rHBCdp10U5CmNInO-1" source="AUk9rHBCdp10U5CmNInO-18" target="AUk9rHBCdp10U5CmNInO-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AUk9rHBCdp10U5CmNInO-22" value="mobile&lt;br&gt;request" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="AUk9rHBCdp10U5CmNInO-21">
+          <mxGeometry x="0.195" y="-1" relative="1" as="geometry">
+            <mxPoint x="-13" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
